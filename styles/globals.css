@@ -13,4 +13,28 @@ a {
 
 * {
   box-sizing: border-box;
+  font-family: 'Roboto Regular';
+}
+
+
+.btn {
+  border: none;
+  border-radius: 3px;
+  padding: 16px;
+  display: inline-block;
+  color:white;
+  text-decoration: none;
+}
+
+.btn:hover {
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.btn-primary {
+  background-color: #2B90F7;
+}
+
+.btn-secondary {
+  background-color: #FD9043;
 }

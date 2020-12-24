@@ -1,0 +1,19 @@
+
+.navbar {
+    display: flex;
+}
+
+.navbarBrand {
+    padding: 2rem;
+}
+.navbarItemContainer {
+    display: flex;
+    margin-left: auto;
+    position: relative;
+    padding: 2rem;
+}
+
+.navbarBrandImage {
+    width: 180px;
+    height: 43.219px;
+}

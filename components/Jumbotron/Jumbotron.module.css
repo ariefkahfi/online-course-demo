@@ -1,0 +1,29 @@
+.jumbotronContainer {
+    display: flex;
+    margin-top: 3rem;
+    padding: 0 2rem;
+}
+
+.jumbotronTitle {
+    font-weight: normal;
+    font-family: 'Roboto Bold';
+}
+
+.jumbotronDesc {
+    line-height: 25px;
+    font-weight: bold;
+    color: #BBBEC6;
+}
+
+.jumbotronText{
+    width: 40%;
+}
+
+.jumbotronImgWrapper {
+    width: 60%;
+}
+
+.jumboBtn {
+    margin-right: 5px;
+}
+

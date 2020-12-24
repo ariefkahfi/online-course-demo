@@ -1,0 +1,39 @@
+.title {
+    font-family: 'Roboto Bold';
+    margin-bottom: 5rem;
+}
+
+.grid {
+    display: grid;
+    grid-template-rows: 50% auto;
+    grid-template-columns: 50% auto;
+    row-gap: 2rem;
+    column-gap: 2rem;
+}
+
+.container {
+    display: flex;
+    padding: 0 2rem;
+}
+
+.desc,.img {
+    width: 50%;
+}
+
+.adGridImg {
+    width: 50px;
+    height: 50px;
+    border-radius: 18px;
+    padding: 8px;
+}
+
+.adGridTitle {
+    font-family: 'Roboto Bold';
+    color: #000;
+    margin-top: 5px;
+}
+
+.adGridText {
+    color: #BBBEC6;
+    line-height: 22px;
+}

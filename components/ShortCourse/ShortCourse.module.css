@@ -1,0 +1,84 @@
+.descContainer {
+    text-align: center;
+}
+
+
+.descTitle {
+    font-family: 'Roboto Bold';
+}
+
+.descText {
+    width: 580px;
+    margin: 0 auto ;
+    color: #BBBEC6;
+}
+
+.cardContainer {
+    margin: 3rem auto 0 auto;
+    width: 980px;
+    display: grid;
+    grid-template-columns: 33% 33% 33%;
+    /* grid-auto-rows: 380px; */
+}
+
+.btnBuy {
+    display: block;
+    width: 100%;
+    padding: 8px;
+}
+
+.cardTitle {
+    font-family: 'Roboto Bold';
+}
+
+.card {
+    border: 2px solid #FCFCFD;
+    border-radius: 3px;
+    display: flex;
+    flex-direction: column;
+    margin: 0 5px;
+}
+
+.wrapper {
+    margin-top: 10rem;
+}
+
+.cardBody{
+    margin-top: auto;
+}
+
+.cardBody , .cardFooter {
+    padding: 25px;
+}
+
+.mentorImg {
+    display: inline-block;
+    margin-right: 5px;
+    width: 40px;
+    height: 40px;
+    border-radius: 40px;
+    object-fit: cover;
+}
+
+.mentorTitle {
+    font-family: 'Roboto Bold';
+}
+
+.cardHeader {
+    padding: 16px;
+}
+
+.cardText {
+    color: #BBBEC6;
+    line-height: 26px;
+}
+
+.cardImg {
+    display: block;
+    width:140px;
+    border-radius: 140px;
+    padding: 16px;
+    margin-top: 10px;
+    background-color: #F9F9FA;
+    height: 140px;
+}
