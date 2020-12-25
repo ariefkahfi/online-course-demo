@@ -1,8 +1,8 @@
 const low = require('lowdb')
-const FileSync = require('lowdb/adapters/FileSync')
+const Memory = require('lowdb/adapters/Memory')
 
 
-const adapter = new FileSync('db.json')
+const adapter = new Memory()
 const db = low(adapter)
 
 db.defaults({ users: [] }).write() 
