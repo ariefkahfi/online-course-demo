@@ -4,7 +4,7 @@ import styles from "./Footer.module.css"
 function SubMenu(props) {
     return (
         <div>
-            <h4>{props.title}</h4>
+            <h4 className={styles.submenuTitle}>{props.title}</h4>
             <div className={styles.submenu}>
                 {props.menus.map((x,idx)=>(
                     <a className={styles.menuItem} key={idx}>{x}</a>
