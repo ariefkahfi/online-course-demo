@@ -1,6 +1,8 @@
 import styles from "./Navbar.module.css";
 import NavbarItem from "../NavbarItem";
-import { useState } from "react";
+import { useEffect, useState } from "react";
+import Axios from "axios";
+
 
 function FormModal(props) {
 
@@ -30,14 +32,51 @@ export default function Navbar() {
     ];
 
 
+    const [isLogin , setIsLogin]= useState(false);
+    const [currentUsername , setCurrentUsername] = useState("");
     const [visible, setVisible] = useState(false);
     const [visibleLogin , setVisibleLogin] = useState(false);
+    const [usernameDaftar , setUsernameDaftar] = useState("");
+    const [passDaftar , setPassDaftar] = useState("");
+
+
+    const [usernameLogin, setUsernameLogin] = useState("");
+    const [passLogin , setPassLogin] = useState("");
+    
 
 
     function onDaftar(){
         console.log("on daftar...");
         setVisible(true);
     }
+
+
+
+    function verifyToken(token){
+        console.log("verifying...");
+        Axios.post("/api/user",{
+            token
+        })
+        .then(response=>{
+            console.log("verifyToken response ok",response.data);
+            setIsLogin(true);
+            localStorage.setItem("AUTH-TOKEN",token);
+            setCurrentUsername(response.data.message);
+        })
+        .catch(err=>{
+            console.log("verifyToken response error",err.response)
+            setIsLogin(false);
+            localStorage.removeItem("AUTH-TOKEN");
+            setCurrentUsername("");
+        })
+    }
+    
+    useEffect(()=>{
+        const authToken = localStorage.getItem("AUTH-TOKEN");
+        if(authToken) {
+            verifyToken(authToken);
+        }
+    },[]);
 
     function onLogin(){
         console.log("on login...");
@@ -46,20 +85,52 @@ export default function Navbar() {
 
     function submitLogin(){
         console.log("submit login...");
+
+        Axios.post("/api/login",{
+            username: usernameLogin,
+            password: passLogin
+        })
+        .then(response=>{
+            verifyToken(response.data.message);
+        }).finally(_=>{
+            setVisibleLogin(false);
+            setUsernameLogin("");
+            setPassLogin("");
+        })
+    }
+
+    function onLogout(){
+        localStorage.removeItem("AUTH-TOKEN");
+        setCurrentUsername("");
+        setIsLogin(false);
     }
 
     function submitDaftar(){
         console.log("submit daftar");
+
+        Axios.post("/api/register",{
+                username: usernameDaftar,
+                password: passDaftar
+        })
+        .then(x=>{
+            alert("Berhasil daftar");
+        }).catch(err=>{
+            alert("Gagal daftar");
+        }).finally(_=>{
+            setVisible(false);
+            setUsernameDaftar("");
+            setPassDaftar("");
+        })
     }
 
     return (
         <>
             <FormModal onClose={()=> setVisibleLogin(false)} visible={visibleLogin}>
                 <div className="form-group">
-                    <input type="text" className="form-control" placeholder="Username anda..."/>
+                    <input type="text" onChange={(e)=> setUsernameLogin(e.target.value)} value={usernameLogin} name="usernameLogin" className="form-control" placeholder="Username anda..."/>
                 </div>
                 <div className="form-group">
-                    <input type="password" placeholder="Password anda..." className="form-control"/>
+                    <input type="password" onChange={e=> setPassLogin(e.target.value)} value={passLogin} name="passwordLogin" placeholder="Password anda..." className="form-control"/>
                 </div>
 
                 <div className="form-group">
@@ -69,10 +140,10 @@ export default function Navbar() {
 
             <FormModal onClose={()=> setVisible(false)} visible={visible}>
                 <div className="form-group">
-                    <input type="text" className="form-control" placeholder="Username anda..."/>
+                    <input type="text" onChange={e=> setUsernameDaftar(e.target.value)} value={usernameDaftar} name="usernameDaftar" className="form-control" placeholder="Username anda..."/>
                 </div>
                 <div className="form-group">
-                    <input type="password" placeholder="Password anda..." className="form-control"/>
+                    <input type="password" onChange={e=> setPassDaftar(e.target.value)} value={passDaftar} name="passwordDaftar" placeholder="Password anda..." className="form-control"/>
                 </div>
 
                 <div className="form-group">
@@ -91,8 +162,18 @@ export default function Navbar() {
                     ))}
 
                     <div className={styles.innerNavbarItemContainer}>
-                        <NavbarItem onClick={onDaftar}>Daftar</NavbarItem>
-                        <NavbarItem onClick={onLogin}>Login</NavbarItem>
+                        {!isLogin && (
+                            <>
+                                <NavbarItem onClick={onDaftar}>Daftar</NavbarItem>
+                                <NavbarItem onClick={onLogin}>Login</NavbarItem>
+                            </>
+                        )}
+                        {isLogin && (
+                            <>
+                                <NavbarItem>{currentUsername}</NavbarItem>
+                                <NavbarItem onClick={onLogout} className="btn btn-danger">Logout</NavbarItem>
+                            </>
+                        )}
                     </div>
                 </div>
             </nav>
