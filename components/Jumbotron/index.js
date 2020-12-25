@@ -15,7 +15,9 @@ export default function Jumbotron(props) {
                     <a href="#scourse" className={styles.jumboBtn + " btn btn-secondary"}>Lihat short course</a>
                 </div>
             </div>
-            <div className={styles.jumbotronImgWrapper}></div>
+            <div className={styles.jumbotronImgWrapper}>
+                <img src="/img/online_course.svg" className={styles.jumboImg}/>
+            </div>
         </div>
     )
 }

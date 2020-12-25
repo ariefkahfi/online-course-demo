@@ -38,3 +38,25 @@ a {
 .btn-secondary {
   background-color: #FD9043;
 }
+
+.btn-danger {
+  background-color: crimson;
+}
+
+.clearfix::after {
+  display: block;
+  content: "";
+  clear: both;
+}
+
+.form-control {
+  border: 2px solid #E8F6FE;
+  display: block;
+  width: 100%;
+  border-radius: 3px;
+  padding: 16px;
+}
+
+.form-group {
+  margin: 10px 0;
+}

@@ -1,0 +1,85 @@
+.imgBootcamp {
+    display: block;
+    margin-bottom: -5px;
+}
+
+.wrapper {
+    background-color: #2B90F7;
+    display: flex;
+    justify-content: center;
+    color: #fff;
+    padding: 10px 0 20px 0;
+}
+
+.card {
+    width: 780px;
+    padding: 8px;
+    display: flex;
+    border: 8px solid #2377cbdd;
+    border-radius: 5px;
+}
+
+
+
+.cardTitle {
+    font-family: 'Roboto Bold';
+    margin-top: 0;
+}
+
+.cardText {
+    margin-top: 0;
+}
+
+.cardContent {
+    padding: 8px;
+}
+
+
+.cardImg {
+    width: 240px;
+    height: 100%;
+    border-radius: 3px;
+}
+
+
+@media (max-width: 1199.98px) { 
+
+}
+@media (max-width: 991.98px) { 
+
+}
+
+@media (max-width: 840px) {
+    .card {
+        width: 640px;
+    }
+} 
+@media (max-width: 767.98px) { 
+
+}
+
+@media (max-width: 656px) {
+    .card {
+        width: 100%;
+        flex-direction: column;
+    }
+
+
+    .cardImg {
+        height: 280px;
+    }
+
+    .wrapper {
+        padding-left: 5px;
+        padding-right: 5px; 
+    }
+
+    .imgBootcamp {
+        margin-top: -2px;
+    }
+}
+@media (max-width: 575.98px) { 
+
+}
+
+

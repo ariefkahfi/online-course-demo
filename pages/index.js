@@ -4,6 +4,13 @@ import Navbar from "../components/Navbar";
 import Jumbotron from "../components/Jumbotron";
 import WhyRakamin from "../components/WhyRakamin";
 import ShortCourse from "../components/ShortCourse";
+import Bootcamp from "../components/Bootcamp";
+import Testimonial from "../components/Testimonial";
+import Mitra from "../components/Mitra";
+import Footer from "../components/Footer";
+
+
+
 
 
 export default function Home() {
@@ -28,6 +35,12 @@ export default function Home() {
             <ShortCourse/>
           </div>
       </div>
+
+      <Bootcamp/>
+      <Testimonial/>
+      <Mitra/>
+      <Footer/>
+
 
 
     </>

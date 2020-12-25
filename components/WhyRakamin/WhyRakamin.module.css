@@ -20,6 +20,22 @@
     width: 50%;
 }
 
+
+.img {
+    display: flex;
+    flex-direction: column;
+}
+
+.imgContent {
+    width: 350px;
+    height: 350px;
+}
+
+.imgContentTop {
+    margin-left: auto;
+    padding-top: 8rem;
+}
+
 .adGridImg {
     width: 50px;
     height: 50px;
@@ -37,3 +53,41 @@
     color: #BBBEC6;
     line-height: 22px;
 }
+
+
+@media (max-width: 1199.98px) { 
+
+ }
+@media (max-width: 991.98px) { 
+
+ }
+
+@media (max-width: 830px) {
+    .imgContentTop {
+        margin-left: 0;
+        padding-top: 5rem;
+    }
+
+    .imgContent {
+        width: 280px;
+        height: 280px;
+    }
+}
+
+@media (max-width: 767.98px) { 
+    .img {
+        display: none;
+    }
+    .desc {
+        width: 100%;
+    }
+ }
+@media (max-width: 575.98px) { 
+    .grid {
+        grid-template-rows: auto;
+        grid-template-columns: 100%;
+    }
+ }
+
+
+

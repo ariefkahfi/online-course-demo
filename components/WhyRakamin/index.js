@@ -54,7 +54,8 @@ export default function WhyRakamin(props) {
                 </div>
             </div>
             <div className={styles.img}>
-                
+                <img src="/img/working.svg" className={styles.imgContent + " "  +styles.imgContentTop} />
+                <img src="/img/work_together.svg" className={styles.imgContent + " " +styles.imgContentBottom}/>
             </div>
         </div>
     )

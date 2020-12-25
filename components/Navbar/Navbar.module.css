@@ -9,11 +9,42 @@
 .navbarItemContainer {
     display: flex;
     margin-left: auto;
-    position: relative;
+    /* position: relative; */
     padding: 2rem;
+}
+
+.innerNavbarItemContainer {
+    display: flex;
+    margin-left: 2rem;
 }
 
 .navbarBrandImage {
     width: 180px;
     height: 43.219px;
+}
+
+.btnClose {
+    padding: 8px;
+    float: right;
+}
+
+
+.modal {
+    background-color: #fff;
+    width: 680px;
+    padding: 8px;
+}
+
+.modalWrapper {
+    background-color: rgba(0, 0, 0, 0.23);
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }

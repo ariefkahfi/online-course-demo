@@ -1,0 +1,46 @@
+.footer {
+    color: #fff;
+}
+
+
+.body {
+    display: flex;
+    width: 860px;
+    margin: 0 auto;
+}
+.wrapper {
+    background-color: #2B90F7;
+}
+
+.brandImg {
+    width: 320px;
+    height: 80px;
+}
+
+.wave {
+    display: block;
+    margin-bottom: -15px;
+}
+
+.brandTitle {
+    font-family: 'Roboto Bold';
+}
+
+.brandText {
+    margin-top: 0;
+}
+
+.menu {
+    display: flex;
+}
+
+.title {
+    font-family: 'Roboto Bold';
+    color: #000;
+}
+
+
+.submenu {
+    display: flex;
+    flex-direction: column;
+}
